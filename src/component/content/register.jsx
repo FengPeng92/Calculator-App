@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Base from "./base";
 
 class Register extends Component {
   state = {};
   render() {
-    return <h1>Register</h1>;
+    return <Base>Register</Base>;
   }
 }
 

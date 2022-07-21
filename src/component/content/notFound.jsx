@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Base from "./base";
 
 class Notfound extends Component {
   state = {};
   render() {
-    return <h1>Notfound</h1>;
+    return <Base>Notfound</Base>;
   }
 }
 
