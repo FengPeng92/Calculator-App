@@ -9,17 +9,22 @@ class Calculator extends Component {
   state = {
     formatter: Intl.NumberFormat("en-us"),
   };
+
+  format = (number) => {
+    const [integer, decimal] = number.split(".");
+    if (decimal === undefined) return this.state.formatter.format(integer);
+    return `${this.state.formatter.format(integer)}.${decimal}`;
+  };
   render() {
     return (
       <Base>
         <div className="calculator">
           <div className="output">
             <div className="last-output">
-              {this.state.formatter.format(this.props.lastOperand)}{" "}
-              {this.state.formatter.format(this.props.operation)}
+              {this.format(this.props.lastOperand)} {this.props.operation}
             </div>
             <div className="current-output">
-              {this.state.formatter.format(this.props.currentOperand)}
+              {this.format(this.props.currentOperand)}
             </div>
           </div>
           <button className="button-ac" onClick={this.props.clear}>
