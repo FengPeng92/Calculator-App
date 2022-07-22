@@ -1,25 +1,12 @@
-import React, { Component } from "react";
-import ACTIONS from "../../../redux/actions";
-import { connect } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { add_digit } from "../../../redux/calculateSlice";
 
-class DigitButton extends Component {
-  state = {};
-  render() {
-    return (
-      <button onClick={() => this.props.add_digit(this.props.digit)}>
-        {this.props.digit}
-      </button>
-    );
-  }
+export default function DigitButton(props) {
+  let { digit } = props;
+  const dispatch = useDispatch();
+
+  return (
+    <button onClick={() => dispatch(add_digit({ digit }))}>{digit}</button>
+  );
 }
-
-const mapDispatchToProps = {
-  add_digit: (digit) => {
-    return {
-      type: ACTIONS.ADD_DIGIT,
-      digit: digit,
-    };
-  },
-};
-
-export default connect(null, mapDispatchToProps)(DigitButton);
