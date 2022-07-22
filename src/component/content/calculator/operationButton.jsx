@@ -1,17 +1,29 @@
-import React from "react";
-import { choose_operation } from "../../../redux/calculateSlice";
-import { useDispatch } from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import ACTIONS from "../../../redux/actions";
 
-export default function OperationButton(props) {
-  let { operation } = props;
-  let dispatch = useDispatch();
-  return (
-    <button
-      onClick={() => {
-        dispatch(choose_operation({ operation }));
-      }}
-    >
-      {operation}
-    </button>
-  );
+class OperationButton extends Component {
+  state = {};
+  render() {
+    return (
+      <button
+        onClick={() => {
+          this.props.choose_operation(this.props.operation);
+        }}
+      >
+        {this.props.operation}
+      </button>
+    );
+  }
 }
+
+const mapDispatchToProps = {
+  choose_operation: (operation) => {
+    return {
+      type: ACTIONS.CHOOSE_OPERATION,
+      operation: operation,
+    };
+  },
+};
+
+export default connect(null, mapDispatchToProps)(OperationButton);

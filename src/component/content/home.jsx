@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import Base from "./base";
-
-export default function Home() {
-  return <Base>Home</Base>;
+class Home extends Component {
+  state = {};
+  render() {
+    return <Base>Home</Base>;
+  }
 }
+
+export default Home;

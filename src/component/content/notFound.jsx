@@ -1,6 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Base from "./base";
 
-export default function Notfound() {
-  return <Base>Notfound</Base>;
+class Notfound extends Component {
+  state = {};
+  render() {
+    return <Base>Notfound</Base>;
+  }
 }
+
+export default Notfound;

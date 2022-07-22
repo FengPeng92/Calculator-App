@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import calculateReducer from "./calculateSlice";
+import reducer from "./reducer";
 
-export const store = configureStore({
-  reducer: {
-    calculate: calculateReducer,
-  },
+const store = configureStore({
+  reducer,
 });
 
+export default store;

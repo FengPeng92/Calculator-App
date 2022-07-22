@@ -1,6 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Base from "./base";
 
-export default function Register() {
-  return <Base>Register</Base>;
+class Register extends Component {
+  state = {};
+  render() {
+    return <Base>Register</Base>;
+  }
 }
+
+export default Register;

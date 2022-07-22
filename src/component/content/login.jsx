@@ -1,6 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Base from "./base";
 
-export default function Login() {
-  return <Base>Login</Base>;
+class Login extends Component {
+  state = {};
+  render() {
+    return <Base>Login</Base>;
+  }
 }
+
+export default Login;
